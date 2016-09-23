@@ -12,7 +12,7 @@
       .content.markdown
         == @newest.sub_content
 
-        = link_to t('home.read'), blog_path(@newest), class: 'read-more'
+        = link_to t('home.read'), blog_path(@newest)
         p.published-at #{t('home.created_at')} #{format_date(@newest.created_at)}
 
       - if @recent.present?

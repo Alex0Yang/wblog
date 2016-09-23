@@ -31,11 +31,6 @@ html
                 = link_to archives_path do
                   i.fi-align-justify
                   | #{t('head.timeline')}
-              li
-                label About
-                = link_to about_path do
-                  i.fi-torso
-                  | #{t('head.about')}
           .off-canvas-content data-off-canvas-content=''
             .title-bar.hide-for-medium.my-topbar
               .title-bar-left
@@ -53,8 +48,6 @@ html
                     = link_to t('head.home'), root_path
                   li
                     = link_to t('head.timeline'), archives_path
-                  li
-                    = link_to t('head.about'), about_path
             - flash.each do |name, msg|
               - if msg.is_a?(String)
                 div class=("callout #{name.to_sym == :notice ? "success" : "alert"}") data-closable=""

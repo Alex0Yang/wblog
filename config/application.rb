@@ -7,7 +7,7 @@ Bundler.require(:default, Rails.env)
 module WBlog
   class Application < Rails::Application
 
-    config.i18n.available_locales = [:en, :'zh-CN']
+    config.i18n.available_locales = ['zh-CN']
     #I18n.config.enforce_available_locales = true
     config.i18n.default_locale = (ENV['LOCALE'] || 'zh-CN').to_sym
     config.time_zone = 'Beijing'

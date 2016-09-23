@@ -7,7 +7,7 @@ GIT
       activesupport (>= 3.0.0)
 
 GEM
-  remote: https://rubygems.org/
+  remote: https://ruby.taobao.org/
   specs:
     actioncable (5.0.0)
       actionpack (= 5.0.0)
