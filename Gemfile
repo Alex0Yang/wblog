@@ -45,6 +45,10 @@ gem 'mina-unicorn', :require => false
 gem 'mina-logs', require: false
 gem 'browser_warrior'
 
+group :production do
+  gem 'unicorn'
+end
+
 group :development do
   gem 'guard'
   gem 'guard-rails'
