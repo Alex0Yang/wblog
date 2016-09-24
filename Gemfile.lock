@@ -7,7 +7,7 @@ GIT
       activesupport (>= 3.0.0)
 
 GEM
-  remote: https://ruby.taobao.org/
+  remote: https://rubygems.org/
   specs:
     actioncable (5.0.0)
       actionpack (= 5.0.0)
@@ -168,11 +168,9 @@ GEM
       mina
     mina-multistage (1.0.2)
       mina (>= 0.2.1)
-    mina-puma (0.3.1)
-      mina
-      puma (>= 2.13)
     mina-sidekiq (0.4.1)
       mina
+    mina-unicorn (0.4.0)
     mini_magick (4.5.1)
     mini_portile2 (2.1.0)
     minitest (5.9.0)
@@ -359,8 +357,8 @@ DEPENDENCIES
   mina
   mina-logs
   mina-multistage
-  mina-puma
   mina-sidekiq
+  mina-unicorn
   mini_magick
   newrelic_rpm
   nokogiri
