@@ -1,12 +1,16 @@
-set :stages, %w(en zh)
-set :default_stage, 'zh'
+set :deploy_to, '/rails/yanglong.org'
+set :unicorn_config, "#{deploy_to}/current/config/unicorn/production.rb"
+set :term_mode, :system
+set :domain, 'yanglong.org'
+set :repository, 'https://github.com/Alex0Yang/wblog.git'
+set :branch, 'master'
+set :user, 'rails'
 
-require 'mina/multistage'
 require 'mina/bundler'
 require 'mina/rails'
 require 'mina/git'
-require 'mina/rvm'
-require 'mina/puma'
+require 'mina/rbenv'
+require 'mina/unicorn'
 require 'mina_sidekiq/tasks'
 require 'mina/logs'
 
@@ -15,7 +19,7 @@ require 'mina/logs'
 set :shared_paths, ['config/database.yml', 'config/application.yml', 'log', 'tmp', 'public/uploads', 'public/personal' ]
 
 task :environment do
-  invoke :'rvm:use[2.3.1]'
+  invoke :'rbenv:load'
 end
 
 task :setup => :environment do
@@ -48,9 +52,7 @@ task :deploy => :environment do
 
     to :launch do
       # Insure puma is start when restart it
-      invoke :'puma:start'
-      invoke :'puma:phased_restart'
-      invoke :'sidekiq:restart'
+      invoke :'unicorn:restart'
     end
 
     invoke :'deploy:cleanup'
