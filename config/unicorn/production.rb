@@ -1,7 +1,7 @@
 app_path = File.expand_path( File.join(File.dirname(__FILE__), '..', '..'))
 
 worker_processes   1
-user 'rails', 'users'
+user 'rails', 'rails'
 preload_app        true
 timeout            180
 listen             '/tmp/unicorn_wblog_zh.sock'

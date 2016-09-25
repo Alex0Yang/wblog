@@ -1,8 +1,9 @@
 set :deploy_to, '/rails/yanglong.org'
 set :unicorn_config, "#{deploy_to}/current/config/unicorn/production.rb"
-set :term_mode, :system
+set :term_mode, :nil
+set :forward_agent, true
 set :domain, 'yanglong.org'
-set :repository, 'https://github.com/Alex0Yang/wblog.git'
+set :repository, 'git@github.com:Alex0Yang/wblog.git'
 set :branch, 'master'
 set :user, 'rails'
 
